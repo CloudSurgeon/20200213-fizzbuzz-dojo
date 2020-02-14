@@ -1,9 +1,7 @@
-def fizzbuzz(x):
-    result = ''
-    if x % 3 == 0:
-        result = 'fizz'
-    if x % 5 == 0:
-        result += 'buzz'
-    if result == '':
-        result = x
-    return result
+def fizzbuzz(x, foo={3: 'fizz', 5: 'buzz'}):
+    result = ''.join(
+        word
+        for divisor, word in foo.items()
+        if x % divisor == 0
+    )
+    return result or x
